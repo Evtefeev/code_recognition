@@ -1,16 +1,13 @@
 import re
 import prepare_image
-import pyautogui
 import pytesseract
-from PIL import Image
-import os
 
 pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 
 
 if __name__ == "__main__":
 
-    images, keys = prepare_image.prepare_image('IMG_2369.jpg')
+    images, keys = prepare_image.prepare_image('IMG_1198.jpg')
     # images_r = prepare_image.resize(images, keys, target_size=(100, 170), borders=(10, 10))
     image = prepare_image.resize_and_concatenate(
         images, keys, target_size=(100, 100), borders=(15, 10))
