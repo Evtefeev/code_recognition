@@ -20,14 +20,14 @@ if __name__ == "__main__":
     result = ""
     for line in text.split("\n"):
         if line != "":
-            # print(line)
+        
             [L, X1, Y1, X2, Y2, _] = line.split(" ")
             if L == "O":
-                # print(X1,X2,Y1,Y2)
+                
                 w, h = image.size
                 p = 10
                 image_c = image.crop((int(X1)-p, int(Y1)-p, int(X2)+p, int(Y2)+p))
-                # image_c.show()
+                
                 L = pytesseract.image_to_string(image_c, config=custom_config_d)
                 L = re.findall(r'\d+', L)[0]
             result += L
